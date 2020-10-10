@@ -1,0 +1,102 @@
+{
+   "$schema":"https://specs.frictionlessdata.io/schemas/table-schema.json",
+   "name":"personnage-historique",
+   "title":"Schéma des événements historiques",
+   "description":"Spécification du fichier d'échange relatif aux événements historiques",
+   "keywords":[
+      "événement",
+      "historique",
+      "histoire"
+   ],
+   "countryCode":"FR",
+   "homepage":"https://github.com/geoffreyaldebert/schema-evenement-historique",
+   "path":"https://github.com/geoffreyaldebert/schema-evenement-historique/raw/v0.1.1/schema.json",
+   "resources":[
+      {
+         "title":"Fichier valide (CSV)",
+         "name":"exemple-valide-csv",
+         "path":"https://github.com/geoffreyaldebert/schema-evenement-historique/raw/v0.1.1/exemple-valide.csv"
+      }
+   ],
+   "created":"2020-10-10",
+   "lastModified":"2020-10-10",
+   "version":"0.1.1",
+   "contributors":[
+      {
+         "title":"Geoffrey Aldebert",
+         "email":"geoffrey.aldebert@gmail.com",
+         "organisation":"Geoffrey Aldebert",
+         "role":"author"
+      }
+   ],
+   "fields":[
+      {
+         "name":"nom",
+         "description":"Nom de l'événement",
+         "example":"Election présidentielle 1981, Massacre de la Saint-Barthelemy, Construction du Pont Neuf",
+         "type":"string",
+         "constraints":{
+            "required":true
+         }
+      },
+      {
+         "name":"categorie",
+         "description":"Catégorie du personnage",
+         "example":"Sciences",
+         "type":"string",
+         "constraints":{
+             "required":true,
+             "enum":[
+                 "Politique",
+                 "Religion",
+                 "Sciences",
+                 "Arts",
+                 "Société",
+                 "Commerce",
+                 "Environnement",
+                 "Urbanisme"
+             ]
+         }
+     },
+     {
+         "name":"date_debut",
+         "description":"Date de début de l'événement. Notation ISO 8601, format AAAA-MM-DD",
+         "example":"1845-10-31",
+         "type":"date",
+         "format":"%Y-%m-%d",
+         "constraints":{
+            "required":true
+         }
+      },
+      {
+          "name":"date_fin",
+          "description":"Date de fin de l'événement. Notation ISO 8601, format AAAA-MM-DD",
+          "example":"1915-04-23",
+          "type":"date",
+          "format":"%Y-%m-%d",
+          "constraints":{
+             "required":false
+          }
+       },
+      {
+         "name":"complement",
+         "description":"Complément libre sur le personnage",
+         "example":"Texte long",
+         "type":"string",
+         "constraints":{
+            "required":false
+         }
+      },
+      {
+          "name": "url",
+          "description": "Url source sur le personnage",
+          "example": "http://monpersonnage.com",
+          "type": "string",
+          "format": "uri",
+          "constraints": {
+              "required": false
+          }
+      }
+   ]
+}
+
