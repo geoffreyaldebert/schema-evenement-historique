@@ -87,8 +87,7 @@
            "type": "number",
            "constraints": {
               "required": true
-           },
-           "location":true
+           }
         },
         {
            "name": "latitude",
@@ -97,8 +96,7 @@
            "type": "number",
            "constraints": {
               "required": true
-           },
-           "location":true
+           }
         },
       {
          "name":"complement",
@@ -119,6 +117,7 @@
               "required": false
           }
       }
-   ]
+   ],
+   "location":true
 }
 
